@@ -49,6 +49,8 @@ header, footer, main, section, article, nav, aside, table, form {
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -59,6 +61,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -71,6 +74,12 @@ a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 
 ::selection { background: var(--flame); color: #fff; }
+
+/* sprečavanje horizontalnog prelivanja (mobile hardening) */
+h1, h2, h3, h4, p, li, blockquote, span { overflow-wrap: break-word; }
+.hero-inner > *, .features-grid > *, .cats-grid > *, .plans-grid > *,
+.devices-grid > *, .steps-grid > *, .voices-grid > *, .guides-grid > *,
+.contact-grid > *, .footer-grid > *, .included > *, .order-planbox > * { min-width: 0; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--void); }
@@ -1366,6 +1375,8 @@ ul, ol { list-style: none; }
    ========================================================================== */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); will-change: opacity, transform; }
 .reveal.in { opacity: 1; transform: none; }
+/* failsafe: bez aktivnog JS-a svi elementi moraju biti vidljivi */
+html:not(.js) .reveal { opacity: 1; transform: none; transition: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1411,9 +1422,12 @@ body.locked { overflow: hidden; }
   .included { padding: 24px; }
 
   .wa-float {
-    right: 16px;
-    bottom: max(16px, env(safe-area-inset-bottom));
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
     width: 54px; height: 54px;
+    z-index: 54;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .footer { padding: 52px 0 30px; }
 }
@@ -1424,6 +1438,22 @@ body.locked { overflow: hidden; }
   .hero-ctas .btn { width: 100%; }
   .cta-box .row { flex-direction: column; }
   .cta-box .row .btn { width: 100%; }
+
+  /* bedž ne sme biti širi od ekrana — tekst sme da prelomi */
+  .hero-badge {
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    padding: 7px 12px;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  /* Orbitron cifre da stanu u dve kolone */
+  .stat-num { font-size: 1.45rem; letter-spacing: 0.01em; }
+  .hero-stats { gap: 18px 20px; max-width: 100%; }
+  .stat-label { font-size: 11px; letter-spacing: 0.05em; }
 
   .modal { padding: 12px; }
   .modal-panel { padding: 22px; border-radius: 22px; }

@@ -3,6 +3,8 @@
    main.js — router + i18n (SR / EN / DE / TR) + interakcije
    ========================================================================== */
 "use strict";
+/* označi da je JS aktivan (omogućava reveal animacije) */
+document.documentElement.classList.add("js");
 
 /* --------------------------------------------------------------------------
    Konstante / kontakt
@@ -1653,6 +1655,11 @@ function initReveals() {
     { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
   );
   els.forEach((e) => io.observe(e));
+  /* failsafe: ako observer iz bilo kog razloga ne okine (nekid mobilni browseri) */
+  setTimeout(() => $$(".reveal:not(.in)").forEach((e) => {
+    const r = e.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) e.classList.add("in");
+  }), 1200);
 }
 
 function initCounters() {
