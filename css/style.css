@@ -1416,6 +1416,24 @@ body.locked { overflow: hidden; }
   /* iOS: font >= 16px sprečava auto-zoom na input focus */
   .field input, .field select, .field textarea, .search-box input { font-size: 16px; }
 
+  /* kompaktan order modal — da forma stane na jedan ekran */
+  .modal { padding: 12px; align-items: start; }
+  .modal-panel {
+    padding: 20px;
+    border-radius: 22px;
+    margin-top: max(10px, env(safe-area-inset-top, 0px));
+  }
+  .modal-head h3 { font-size: 19px; margin-top: 5px; }
+  .order-planbox { margin-top: 14px; padding: 11px 16px; }
+  .form-grid { margin-top: 14px; gap: 10px; }
+  .field label { margin-bottom: 5px; }
+  .field input, .field select, .field textarea { padding: 10px 13px; border-radius: 12px; }
+  .field textarea { min-height: 0; height: 56px; resize: none; }
+  .field-err { margin-top: 4px; font-size: 11px; }
+  .modal-actions { margin-top: 14px; gap: 8px; }
+  .modal-actions .btn { padding: 13px 24px; }
+  .modal-hint { margin-top: 10px; font-size: 11.5px; }
+
   /* malo kompaktnije kartice na telefonu */
   .feature-card, .step-card, .voice-card, .guide-card { padding: 22px; }
   .cat-card { height: 240px; }
@@ -1455,9 +1473,9 @@ body.locked { overflow: hidden; }
   .hero-stats { gap: 18px 20px; max-width: 100%; }
   .stat-label { font-size: 11px; letter-spacing: 0.05em; }
 
-  .modal { padding: 12px; }
-  .modal-panel { padding: 22px; border-radius: 22px; }
-  .order-planbox { flex-direction: column; align-items: flex-start; gap: 5px; }
+  /* dodatno zbijanje modala na malim telefonima */
+  .modal-panel { padding: 18px; }
+  .order-planbox { flex-direction: column; align-items: flex-start; gap: 4px; }
   .order-planbox .p-price { font-size: 19px; }
 
   .scroll-hint { display: none; }

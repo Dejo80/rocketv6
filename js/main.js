@@ -1539,7 +1539,10 @@ function openOrder(plan, trial) {
   const m = $("#modal");
   m.classList.add("open");
   document.body.classList.add("locked");
-  setTimeout(() => $("#oName").focus(), 250);
+  // fokus samo na desktop-u (na mobilnom bi otvorio tastaturu i izbacio formu van ekrana)
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    setTimeout(() => $("#oName").focus(), 250);
+  }
 }
 
 function closeOrder() {
