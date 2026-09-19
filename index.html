@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RocketTV — Premium IPTV za Balkan</title>
+  <meta name="description" content="RocketTV: 28.000+ kanala, 150.000 filmova i serija, 4K sport. Aktivacija za 5 minuta. Paketi od 10€." />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="#/" aria-label="RocketTV">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </span>
+        <span class="logo-text">ROCKET<span class="tv">TV</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Glavna navigacija">
+        <a href="#/" data-nav="home" data-i18n="nav.home">Početna</a>
+        <a href="#/kanali" data-nav="channels" data-i18n="nav.channels">Kanali</a>
+        <a href="#/paketi" data-nav="packages" data-i18n="nav.packages">Paketi</a>
+        <a href="#/podrska" data-nav="support" data-i18n="nav.support">Podrška</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang" id="langBox">
+          <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true">
+            <i data-lucide="globe"></i>
+            <span id="langCode">SR</span>
+            <i data-lucide="chevron-down" class="chev"></i>
+          </button>
+          <div class="lang-menu" role="menu">
+            <button class="lang-item" type="button" data-lang="sr"><span class="code">SR</span> Srpski</button>
+            <button class="lang-item" type="button" data-lang="en"><span class="code">EN</span> English</button>
+            <button class="lang-item" type="button" data-lang="de"><span class="code">DE</span> Deutsch</button>
+            <button class="lang-item" type="button" data-lang="tr"><span class="code">TR</span> Türkçe</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-sm header-cta" type="button" data-order="trial" data-trial="1">
+          <i data-lucide="flame"></i><span data-i18n="nav.trial">24h trial</span>
+        </button>
+
+        <button class="burger" id="burger" type="button" aria-label="Meni">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= MOBILE MENU ======================= -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mm-link" href="#/" data-nav="home"><span data-i18n="nav.home">Početna</span><i data-lucide="arrow-up-right"></i></a>
+    <a class="mm-link" href="#/kanali" data-nav="channels"><span data-i18n="nav.channels">Kanali</span><i data-lucide="arrow-up-right"></i></a>
+    <a class="mm-link" href="#/paketi" data-nav="packages"><span data-i18n="nav.packages">Paketi</span><i data-lucide="arrow-up-right"></i></a>
+    <a class="mm-link" href="#/podrska" data-nav="support"><span data-i18n="nav.support">Podrška</span><i data-lucide="arrow-up-right"></i></a>
+    <a class="mm-link" href="#/uslovi" data-nav="terms"><span data-i18n="nav.terms">Uslovi</span><i data-lucide="arrow-up-right"></i></a>
+    <div class="mm-cta">
+      <button class="btn btn-primary btn-block" type="button" data-order="trial" data-trial="1">
+        <i data-lucide="flame"></i><span data-i18n="nav.trial">24h trial</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================= APP ======================= -->
+  <main id="app"></main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#/" aria-label="RocketTV">
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              </svg>
+            </span>
+            <span class="logo-text">ROCKET<span class="tv">TV</span></span>
+          </a>
+          <p data-i18n="footer.desc">Premium IPTV za Balkan i dijasporu.</p>
+          <div class="footer-social">
+            <a class="fs-btn" id="fsWa" href="#" target="_blank" rel="noreferrer" aria-label="WhatsApp"></a>
+            <a class="fs-btn" id="fsTg" href="#" target="_blank" rel="noreferrer" aria-label="Telegram"></a>
+            <a class="fs-btn" id="fsMail" href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer.pages">Navigacija</h5>
+          <ul>
+            <li><a href="#/" data-i18n="nav.home">Početna</a></li>
+            <li><a href="#/kanali" data-i18n="nav.channels">Kanali</a></li>
+            <li><a href="#/paketi" data-i18n="nav.packages">Paketi</a></li>
+            <li><a href="#/podrska" data-i18n="nav.support">Podrška</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer.legal">Pravno</h5>
+          <ul>
+            <li><a href="#/uslovi" data-i18n="footer.terms">Uslovi korišćenja</a></li>
+            <li><a href="#/uslovi" data-i18n="footer.privacy">Politika privatnosti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer.contact">Kontakt</h5>
+          <ul>
+            <li><a id="fWa" href="#" target="_blank" rel="noreferrer"><i data-lucide="message-circle"></i><span id="fWaNum"></span></a></li>
+            <li><a id="fTg" href="#" target="_blank" rel="noreferrer"><i data-lucide="send"></i><span id="fTgUser"></span></a></li>
+            <li><a id="fMail" href="#"><i data-lucide="mail"></i><span id="fMailAddr"></span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer.rights">© 2026 RocketTV. Sva prava zadržana.</span>
+        <span class="eur"><i></i><span data-i18n="footer.note">Cene su u evrima (EUR)</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================= FLOATING WHATSAPP ======================= -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noreferrer" aria-label="WhatsApp"></a>
+
+  <!-- ======================= ORDER MODAL ======================= -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">RocketTV</span>
+          <h3 id="modalTitle">Poruči paket</h3>
+        </div>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Zatvori"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="order-planbox" id="orderBox"></div>
+
+      <div class="form-grid">
+        <div class="field" id="planField">
+          <label data-i18n="pricing.eyebrow">Paketi</label>
+          <select id="oPlan"></select>
+        </div>
+        <div class="field">
+          <label data-i18n="order.name">Ime i prezime</label>
+          <input type="text" id="oName" autocomplete="name" />
+          <p class="field-err" id="oNameErr"></p>
+        </div>
+        <div class="field">
+          <label data-i18n="order.contact">WhatsApp / Telegram broj</label>
+          <input type="text" id="oContact" autocomplete="tel" />
+          <p class="field-err" id="oContactErr"></p>
+        </div>
+        <div class="field">
+          <label data-i18n="order.device">Uređaj</label>
+          <select id="oDevice"></select>
+        </div>
+        <div class="field">
+          <label data-i18n="order.note">Napomena (opciono)</label>
+          <textarea id="oNote" rows="2"></textarea>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-wa btn-block" id="sendWa" type="button"><i data-lucide="message-circle"></i><span data-i18n="order.send">Pošalji preko WhatsApp-a</span></button>
+        <button class="btn btn-ghost btn-block" id="sendTg" type="button"><i data-lucide="send"></i><span data-i18n="order.sendTg">Pošalji preko Telegrama</span></button>
+      </div>
+
+      <p class="modal-hint"><i data-lucide="clock"></i><span data-i18n="order.hint">Poruka se otvara u aplikaciji — samo pritisni „pošalji“.</span></p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Footer + floating WhatsApp ikonice (brand SVG)
+    (function () {
+      var WA = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>';
+      var TG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>';
+      document.getElementById("fsWa").innerHTML = WA;
+      document.getElementById("fsTg").innerHTML = TG;
+      document.getElementById("waFloat").innerHTML = WA;
+    })();
+  </script>
+</body>
+</html>
