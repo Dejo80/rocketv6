@@ -1520,6 +1520,16 @@ function applyStatic() {
 let orderState = { plan: "3m", trial: false };
 
 function openOrder(plan, trial) {
+  // ako je mobilni meni otvoren — zatvori ga (modal ide preko njega)
+  const mm = $("#mobileMenu");
+  if (mm && mm.classList.contains("open")) {
+    mm.classList.remove("open");
+    const burger = $("#burger");
+    if (burger) {
+      burger.innerHTML = '<i data-lucide="menu"></i>';
+      if (window.lucide) lucide.createIcons();
+    }
+  }
   orderState.plan = plan && PLANS.some((p) => p.id === plan) ? plan : "3m";
   orderState.trial = !!trial;
   paintOrderBox();

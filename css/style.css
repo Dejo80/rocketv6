@@ -885,6 +885,7 @@ ul, ol { list-style: none; }
 @media (min-width: 1100px) { .plan-card.featured { transform: scale(1.04); } .plan-card.featured:hover { transform: scale(1.04) translateY(-6px); } }
 .plan-badge {
   position: absolute;
+  z-index: 2;
   top: -13px; left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(90deg, var(--ember), var(--flame));
@@ -1384,3 +1385,70 @@ ul, ol { list-style: none; }
 }
 
 body.locked { overflow: hidden; }
+
+/* ==========================================================================
+   MOBILE POLISH
+   ========================================================================== */
+@media (max-width: 1023px) {
+  /* dinamična visina viewport-a (mobilni browser UI) */
+  .hero { min-height: 100vh; min-height: 100svh; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .hero { padding: 126px 0 76px; }
+  .page-head { padding: 130px 0 54px; }
+  .final-cta { padding: 16px 0 84px; }
+  .cta-inner { padding: 44px 24px; border-radius: 26px; }
+  .cta-panel { border-radius: 26px; }
+
+  /* iOS: font >= 16px sprečava auto-zoom na input focus */
+  .field input, .field select, .field textarea, .search-box input { font-size: 16px; }
+
+  /* malo kompaktnije kartice na telefonu */
+  .feature-card, .step-card, .voice-card, .guide-card { padding: 22px; }
+  .cat-card { height: 240px; }
+  .included { padding: 24px; }
+
+  .wa-float {
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: 54px; height: 54px;
+  }
+  .footer { padding: 52px 0 30px; }
+}
+
+@media (max-width: 480px) {
+  /* CTA dugmad preko cele širine */
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; }
+  .cta-box .row { flex-direction: column; }
+  .cta-box .row .btn { width: 100%; }
+
+  .modal { padding: 12px; }
+  .modal-panel { padding: 22px; border-radius: 22px; }
+  .order-planbox { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .order-planbox .p-price { font-size: 19px; }
+
+  .scroll-hint { display: none; }
+}
+
+@media (max-width: 380px) {
+  /* header staje i na najmanje ekrane (npr. 320px) */
+  .header-inner { gap: 8px; }
+  .logo { gap: 8px; }
+  .logo-mark { width: 34px; height: 34px; border-radius: 11px; }
+  .logo-mark svg { width: 19px; height: 19px; }
+  .logo-text { font-size: 16px; letter-spacing: 0.05em; }
+  .lang-btn { padding: 8px 11px; gap: 5px; }
+  .lang-btn svg:first-child { display: none; }
+
+  .hero-badge {
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    padding: 7px 12px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+  .container { padding-inline: 16px; }
+}
